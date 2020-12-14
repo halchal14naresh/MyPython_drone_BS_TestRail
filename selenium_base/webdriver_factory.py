@@ -97,9 +97,8 @@ class DriverFactory():
 
     def init_bs(self):
         self.log.info("Launching  browser in Browser Stack")
-        print("Launching  browser in Browser Stack")
-        #driver = webdriver.Chrome(ChromeDriverManager().install())
+        access_url = readProp.get_property_value('BROWSER_STACK', "access_url")
         driver = webdriver.Remote(
-            command_executor='https://testuser1319:kqwyxq2TqmGvA5zYNyXp@hub-cloud.browserstack.com/wd/hub',
+            command_executor=access_url,
             desired_capabilities=self.desired_capabilities())
         return driver

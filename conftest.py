@@ -16,6 +16,9 @@ from selenium_base.webdriver_factory import DriverFactory
 from utilities.generate_allure_report.generate_complete_execution_report import AllureReport
 from utilities.logger import customLogger
 from utilities.move_to_archive import MoveToArchiveFolder
+from utilities.read_config import ReadConfig
+from utilities.read_excel import get_testcaseid
+from utilities.testrail import APIClient
 
 driver = None
 _LOG = customLogger(logging.INFO)
@@ -24,7 +27,6 @@ environment = None
 
 @pytest.fixture(scope='class')
 def class_level_setup(request, get_param):
-    print("NARESH NARESH NARESH NARESH NARESH NARESH NARESH NARESH NARESH NARESH NARESH NARESH")
     """
     This will execute before each class contains test cases
     """
@@ -32,30 +34,16 @@ def class_level_setup(request, get_param):
     _LOG.info("Initializing Driver")
     environment = get_param["env"]
     # Initializing webdriver
-    print("driver  ", driver)
     driver_init = DriverFactory()
     driver = driver_init.driver_initialize(get_param["browser"])
-    print("driver is now  ", driver)
     login = LoginPageOR(driver, _LOG)
-
-    print("I am login object", login)
-
     request.cls.login = login
     header = HeaderPage(driver, _LOG)
-
-    print("I am header object", header)
-
     request.cls.header = header
     #
     _LOG.info("Initializing required classes")
     environment = environment.upper() + "_ENVIRONMENT"
-
-    print("I am environment object", environment)
-    print("I am request.cls ", request.cls)
-
     request.cls.driver = driver
-    print("I am request.cls ", request.cls)
-
     if request.cls is not None:
         # request.cls.driver = driver
         pass
@@ -65,13 +53,13 @@ def class_level_setup(request, get_param):
 
 
 @pytest.fixture()
-def setup(request):
-    print("Suresh Suresh Suresh Suresh Suresh Suresh")
-
+def setup(request, get_param):
     """
     This will execute before executing test case method
     """
     global driver, _LOG
+    runID = get_param["runid"]
+    readProp = ReadConfig()
     # Landing page - Dashboard page
     driver.get("https://www.google.co.in/")
     test_name = request.node.name
@@ -80,11 +68,19 @@ def setup(request):
     # This will execute after executing test case method
     _LOG.info("Tear down driver")
     test_name = request.node.name
+    case_ids = get_testcaseid(test_name)
+    client = APIClient(readProp.get_property_value('TestRail', "testrail_url"))
+    client.user = readProp.get_property_value('TestRail', "testrail_user")
+    client.password = readProp.get_property_value('TestRail', "testrail_pass")
+    success_msg = "This is working fine marked Passed By Selenium Thanks"
+    fail_msg = "This is not working fine marked Failed By Selenium Thanks"
     if request.node.rep_setup.failed:
         _LOG.error("####### TEST CASE '" + test_name + "' IS FAILED")
+        client.updatetestRail(runID,case_ids,5,fail_msg)
     elif request.node.rep_setup.passed:
         if request.node.rep_call.failed:
             _LOG.error("####### TEST CASE '" + test_name + "' IS FAILED")
+            client.updatetestRail(runID, case_ids, 5, fail_msg)
             screenshot_path = CaptureScreenShot.capture_screenshot(driver, test_name)
             # attaching screen shot to allure report
             allure.attach.file(screenshot_path, attachment_type=AttachmentType.PNG)
@@ -92,6 +88,7 @@ def setup(request):
             # driver.execute_script("lambda-status=failed")
         else:
             _LOG.info("####### TEST CASE '" + test_name + "' IS PASSED")
+            client.updatetestRail(runID, case_ids, 1, success_msg)
             # below statement will add result to Labmda Test tool
             # driver.execute_script("lambda-status=passed")
 
@@ -101,18 +98,16 @@ def pytest_addoption(parser):
     Parse the command prompt value of browser variable
     """
     parser.addoption("--browser", default='Chrome', help="browsers like Firefox, Chrome or IE")
-    parser.addoption("--env", default="stage", help="Select application environment like "
-                                                    "staging, production etc")
+    parser.addoption("--env", default="stage", help="Select application environment like "                                                   "staging, production etc")
+    parser.addoption("--runid", default=1, help="this is run id from testrun")
 
 
 @pytest.fixture(scope="session")
 def get_param(request):
-    print("DEV DEV DEV")
-
     """
     Providing parsed browser value to set up method
     """
-    command_param = {"browser": request.config.getoption("--browser"), "env": request.config.getoption("--env")}
+    command_param = {"browser": request.config.getoption("--browser"), "env": request.config.getoption("--env") ,"runid": request.config.getoption("--runid")}
     return command_param
 
 
@@ -123,22 +118,16 @@ def pytest_runtest_makereport(item, call):
     """
     outcome = yield
     rep = outcome.get_result()
-
     # set a report attribute for each phase of a call, which can
     # be "setup", "call", "teardown"
-
     setattr(item, "rep_" + rep.when, rep)
 
 
 @pytest.fixture(scope="session")
 def one_time_setup():
-    print("one_time_setup one_time_setup one_time_setup one_time_setup")
-
-
     """
     This fixture will execute only once before start execution of all test cases
     """
-
     paths = GetPath()
     move_to_archive = MoveToArchiveFolder()
     move_to_archive.move_to_archive(paths.archive_report_path(), paths.execution_report_path())
@@ -148,7 +137,7 @@ def one_time_setup():
     paths.log_file_path()
     # yield
     # _LOG.info("Generating execution report")
-    # report = AllureReport()
+    # report = AreReport()
     # report.call_allure_report_bat()
     # report.close_allure()
 

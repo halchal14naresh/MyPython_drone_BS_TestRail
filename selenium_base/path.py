@@ -93,3 +93,16 @@ class GetPath:
             return archive_path
         except Exception as e:
             print("Error in execution report path" + str(e))
+
+    def testrail_mapping_path(self, excel_name: str, doc="this returns the path of test_data folder. "
+                                                  "It contains test test_data files"):
+        """
+        this returns the path of given data file from test_data folder.
+        'test_data' folder contains test multiple test_data files
+        """
+        try:
+
+            data_file = os.path.join("resources", "test_data", excel_name)
+            return data_file
+        except Exception as e:
+            print("Error in data file path" + str(e))
