@@ -146,9 +146,9 @@ def one_time_setup():
     paths.screenshot_folder_path()
     paths.execution_report_path()
     paths.log_file_path()
-    yield
-    _LOG.info("Generating execution report")
-    report = AllureReport()
-    report.call_allure_report_bat()
+    # yield
+    # _LOG.info("Generating execution report")
+    # report = AllureReport()
+    # report.call_allure_report_bat()
     # report.close_allure()
 
