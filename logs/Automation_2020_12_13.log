@@ -1,0 +1,165 @@
+2020-12-13 20:47:02,000 - <module> - INFO: Initializing Driver
+2020-12-13 20:47:02,001 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 20:48:03,439 - <module> - INFO: Initializing required classes
+2020-12-13 20:48:13,260 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 20:48:13,265 - <module> - INFO: Tear down driver
+2020-12-13 20:48:13,266 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 20:49:31,839 - <module> - INFO: Initializing Driver
+2020-12-13 20:49:31,839 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 20:49:46,178 - <module> - INFO: Initializing required classes
+2020-12-13 21:43:02,396 - <module> - INFO: Initializing Driver
+2020-12-13 21:43:02,397 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 21:44:23,631 - <module> - INFO: Initializing required classes
+2020-12-13 21:45:31,296 - <module> - INFO: Initializing Driver
+2020-12-13 21:45:31,296 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 21:45:44,138 - <module> - INFO: Initializing required classes
+2020-12-13 21:48:04,710 - <module> - INFO: Initializing Driver
+2020-12-13 21:48:04,710 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 21:48:13,631 - <module> - INFO: Initializing required classes
+2020-12-13 21:51:52,810 - <module> - INFO: Initializing Driver
+2020-12-13 21:51:52,810 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 21:52:03,368 - <module> - INFO: Initializing required classes
+2020-12-13 21:53:15,983 - <module> - INFO: Initializing Driver
+2020-12-13 21:53:15,983 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 21:53:22,531 - <module> - INFO: Initializing required classes
+2020-12-13 21:55:55,783 - <module> - INFO: Initializing Driver
+2020-12-13 21:55:55,798 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 21:56:04,151 - <module> - INFO: Initializing required classes
+2020-12-13 21:59:54,214 - <module> - INFO: Initializing Driver
+2020-12-13 21:59:54,214 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:00:01,441 - <module> - INFO: Initializing required classes
+2020-12-13 22:00:09,053 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:00:09,056 - <module> - INFO: Tear down driver
+2020-12-13 22:00:09,056 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:00:51,886 - <module> - INFO: Initializing Driver
+2020-12-13 22:00:51,886 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:00:59,696 - <module> - INFO: Initializing required classes
+2020-12-13 22:01:03,683 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:01:03,685 - <module> - INFO: Tear down driver
+2020-12-13 22:01:03,686 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:01:14,356 - <module> - INFO: Initializing Driver
+2020-12-13 22:01:14,356 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:01:23,490 - <module> - INFO: Initializing required classes
+2020-12-13 22:02:16,273 - <module> - INFO: Initializing Driver
+2020-12-13 22:02:16,273 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:02:23,268 - <module> - INFO: Initializing required classes
+2020-12-13 22:06:43,828 - <module> - INFO: Initializing Driver
+2020-12-13 22:06:43,828 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:07:07,567 - <module> - INFO: Initializing required classes
+2020-12-13 22:09:27,302 - <module> - INFO: Initializing Driver
+2020-12-13 22:09:27,302 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:09:36,292 - <module> - INFO: Initializing required classes
+2020-12-13 22:17:55,283 - <module> - INFO: Initializing Driver
+2020-12-13 22:17:55,283 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:18:18,777 - <module> - INFO: Initializing required classes
+2020-12-13 22:18:39,818 - <module> - INFO: Initializing Driver
+2020-12-13 22:18:39,818 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:18:47,358 - <module> - INFO: Initializing required classes
+2020-12-13 22:21:00,697 - <module> - INFO: Initializing Driver
+2020-12-13 22:21:00,697 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:21:07,239 - <module> - INFO: Initializing required classes
+2020-12-13 22:22:10,976 - <module> - INFO: Initializing Driver
+2020-12-13 22:22:10,976 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:22:16,911 - <module> - INFO: Initializing required classes
+2020-12-13 22:27:30,221 - <module> - INFO: Initializing Driver
+2020-12-13 22:27:30,221 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:27:36,419 - <module> - INFO: Initializing required classes
+2020-12-13 22:27:48,016 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:27:48,022 - <module> - INFO: Tear down driver
+2020-12-13 22:27:48,023 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:28:26,812 - <module> - INFO: Initializing Driver
+2020-12-13 22:28:26,812 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:28:37,103 - <module> - INFO: Initializing required classes
+2020-12-13 22:28:44,596 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:28:44,601 - <module> - INFO: Tear down driver
+2020-12-13 22:28:44,601 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:29:53,421 - <module> - INFO: Initializing Driver
+2020-12-13 22:29:53,421 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:29:59,826 - <module> - INFO: Initializing required classes
+2020-12-13 22:30:06,653 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:30:06,657 - <module> - INFO: Tear down driver
+2020-12-13 22:30:06,658 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:30:35,695 - <module> - INFO: Initializing Driver
+2020-12-13 22:30:35,711 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:30:41,727 - <module> - INFO: Initializing required classes
+2020-12-13 22:30:46,272 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:30:46,276 - <module> - INFO: Tear down driver
+2020-12-13 22:30:46,276 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:31:07,348 - <module> - INFO: Initializing Driver
+2020-12-13 22:31:07,348 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:31:13,961 - <module> - INFO: Initializing required classes
+2020-12-13 22:31:20,178 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:31:20,181 - <module> - INFO: Tear down driver
+2020-12-13 22:31:20,181 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:32:00,911 - <module> - INFO: Initializing Driver
+2020-12-13 22:32:00,911 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:32:07,946 - <module> - INFO: Initializing required classes
+2020-12-13 22:35:09,840 - <module> - INFO: Initializing Driver
+2020-12-13 22:35:09,840 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:35:26,816 - <module> - INFO: Initializing required classes
+2020-12-13 22:35:41,389 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:35:41,397 - <module> - INFO: Tear down driver
+2020-12-13 22:35:41,398 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:37:11,926 - <module> - INFO: Initializing Driver
+2020-12-13 22:37:11,942 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:37:32,862 - <module> - INFO: Initializing required classes
+2020-12-13 22:37:48,839 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:37:48,846 - <module> - INFO: Tear down driver
+2020-12-13 22:37:48,846 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:40:15,274 - <module> - INFO: Initializing Driver
+2020-12-13 22:40:15,274 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:40:30,260 - <module> - INFO: Initializing required classes
+2020-12-13 22:40:37,921 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:40:38,025 - <module> - INFO: Tear down driver
+2020-12-13 22:40:38,025 - <module> - ERROR: ####### TEST CASE 'test_method1' IS FAILED
+2020-12-13 22:40:40,755 - capture_screenshot - INFO: Capturing the screen shot of failed test case 'test_method1'.
+2020-12-13 22:40:40,755 - capture_screenshot - ERROR: Capture Screenshot exception: unsupported operand type(s) for +: 'NoneType' and 'str'
+2020-12-13 22:45:29,324 - <module> - INFO: Initializing Driver
+2020-12-13 22:45:29,356 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:45:58,857 - <module> - INFO: Initializing required classes
+2020-12-13 22:46:08,575 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:47:40,347 - <module> - INFO: Tear down driver
+2020-12-13 22:47:40,347 - <module> - ERROR: ####### TEST CASE 'test_method1' IS FAILED
+2020-12-13 22:47:40,579 - capture_screenshot - INFO: Capturing the screen shot of failed test case 'test_method1'.
+2020-12-13 22:47:40,579 - capture_screenshot - ERROR: Capture Screenshot exception: unsupported operand type(s) for +: 'NoneType' and 'str'
+2020-12-13 22:48:59,865 - <module> - INFO: Initializing Driver
+2020-12-13 22:48:59,865 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:49:12,757 - <module> - INFO: Initializing required classes
+2020-12-13 22:49:25,980 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:49:25,983 - <module> - INFO: Tear down driver
+2020-12-13 22:49:25,983 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:59:16,456 - <module> - INFO: Initializing Driver
+2020-12-13 22:59:16,456 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 22:59:32,465 - <module> - INFO: Initializing required classes
+2020-12-13 22:59:42,924 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 22:59:42,928 - <module> - INFO: Tear down driver
+2020-12-13 22:59:42,928 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 22:59:45,222 - <module> - INFO: Generating execution report
+2020-12-13 23:18:12,261 - <module> - INFO: Initializing Driver
+2020-12-13 23:18:12,261 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 23:18:32,677 - <module> - INFO: Initializing required classes
+2020-12-13 23:18:39,900 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 23:18:41,019 - <module> - INFO: Tear down driver
+2020-12-13 23:18:41,019 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 23:18:45,075 - <module> - INFO: Generating execution report
+2020-12-13 23:42:40,541 - <module> - INFO: Initializing Driver
+2020-12-13 23:42:40,541 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 23:43:06,486 - DriverFactory - ERROR: Driver error: Message: session not created
+from chrome not reachable
+  (Session info: chrome=87.0.4280.88)
+
+2020-12-13 23:43:06,488 - <module> - ERROR: Driver is None
+2020-12-13 23:43:06,944 - <module> - INFO: Generating execution report
+2020-12-13 23:45:47,746 - <module> - INFO: Initializing Driver
+2020-12-13 23:45:47,747 - DriverFactory - INFO: Launching Chrome browser
+2020-12-13 23:45:56,632 - <module> - INFO: Initializing required classes
+2020-12-13 23:46:04,864 - <module> - INFO: ####### EXECUTING TEST CASE -- 'test_method1'
+2020-12-13 23:46:05,390 - <module> - INFO: Tear down driver
+2020-12-13 23:46:05,390 - <module> - INFO: ####### TEST CASE 'test_method1' IS PASSED
+2020-12-13 23:46:09,101 - <module> - INFO: Generating execution report
+2020-12-13 23:52:46,494 - <module> - INFO: Initializing Driver
+2020-12-13 23:52:46,494 - DriverFactory - INFO: Launching FireFox browser
+2020-12-13 23:54:15,552 - DriverFactory - ERROR: Driver error: Message: No connection could be made because the target machine actively refused it. (os error 10061)
+
+2020-12-13 23:54:15,552 - <module> - ERROR: Driver is None
+2020-12-13 23:54:16,307 - <module> - INFO: Generating execution report
