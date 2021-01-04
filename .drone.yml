@@ -6,4 +6,4 @@ steps:
   image: python
   commands:
   - pip install -r requirements.txt
-  - pytest -v -s --browser=bs --runid=2
+  - pytest -v -s --browser=bs --runid=1
