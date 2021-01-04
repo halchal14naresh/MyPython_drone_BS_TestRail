@@ -5,7 +5,7 @@ steps:
 - name: mytest
   image: openjdk:8
   commands:
-    - java --version
+    - java -version
     - echo $JAVA_HOME
     - whereis java
 
