@@ -12,7 +12,7 @@ steps:
 
 
 - name: test
-  image: python
+  image: carvk/java_python:openjdk15_python38
   commands:
     - python --version
     - java -version
