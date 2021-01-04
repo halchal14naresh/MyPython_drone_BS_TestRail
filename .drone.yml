@@ -7,6 +7,8 @@ steps:
   commands:
     - java -version
     - echo %JAVA_HOME%
+    - echo $JAVA_HOME
+    - whereis java
 
 
 
