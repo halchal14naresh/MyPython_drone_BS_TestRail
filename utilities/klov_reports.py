@@ -20,7 +20,9 @@ class Reports:
 
 
 
-        self.classpath = "F:/EclipseWorkSpace/TestProject/target/TestProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
+        #self.classpath = "F:/EclipseWorkSpace/TestProject/target/TestProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
+        self.classpath = "F:/AllPythonProjects/PDS_Framwork/Reports/TestProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
+
         jpype.startJVM(jpype.getDefaultJVMPath(), '-ea', "-Djava.class.path=" + self.classpath)
         print("Step 1 *******")
         jpype.java.lang.System.out.println("hello world")
