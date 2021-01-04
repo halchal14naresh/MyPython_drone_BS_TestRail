@@ -15,5 +15,9 @@ steps:
 - name: test
   image: python
   commands:
-  - pip install -r requirements.txt
-  - pytest -v -s --browser=bs --runid=1
+    - java -version
+    - echo %JAVA_HOME%
+    - echo $JAVA_HOME
+    - whereis java
+    - pip install -r requirements.txt
+    - pytest -v -s --browser=bs --runid=1
