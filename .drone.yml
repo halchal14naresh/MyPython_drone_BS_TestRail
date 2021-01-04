@@ -5,8 +5,7 @@ steps:
 - name: mytest
   image: openjdk:8
   commands:
-    - java -version
-    - echo %JAVA_HOME%
+    - java --version
     - echo $JAVA_HOME
     - whereis java
 
@@ -16,7 +15,6 @@ steps:
   image: python
   commands:
     - java -version
-    - echo %JAVA_HOME%
     - echo $JAVA_HOME
     - whereis java
     - pip install -r requirements.txt
