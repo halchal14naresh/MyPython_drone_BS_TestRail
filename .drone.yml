@@ -4,6 +4,9 @@ name: default
 steps:
 - name: mytest
   image: openjdk:8
+  commands:
+    - java -version
+    - echo %JAVA_HOME%
 
 
 
