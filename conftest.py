@@ -14,6 +14,7 @@ from selenium_base.path import GetPath
 from selenium_base.take_screenshot import CaptureScreenShot
 from selenium_base.webdriver_factory import DriverFactory
 from utilities.generate_allure_report.generate_complete_execution_report import AllureReport
+from utilities.klov_reports import Reports
 from utilities.logger import customLogger
 from utilities.move_to_archive import MoveToArchiveFolder
 from utilities.read_config import ReadConfig
@@ -23,6 +24,21 @@ from utilities.testrail import APIClient
 driver = None
 _LOG = customLogger(logging.INFO)
 environment = None
+report = None
+klov_server = None
+
+
+def init_report():
+    read_prop = ReadConfig()
+    projectName = read_prop.get_property_value("REPORT", "projectName")
+    reportName = read_prop.get_property_value("REPORT", "reportName")
+    mongoDbHost = read_prop.get_property_value("REPORT", "mongoDbHost")
+    mongoDbPort = int(read_prop.get_property_value("REPORT", "mongoDbPort"))
+    klovServerAddress = read_prop.get_property_value("REPORT", "klovServerAddress")
+    return Reports(projectName, reportName, mongoDbHost, mongoDbPort, klovServerAddress)
+
+
+report = init_report()
 
 
 @pytest.fixture(scope='class')
@@ -48,7 +64,8 @@ def class_level_setup(request, get_param):
         # request.cls.driver = driver
         pass
     request.cls.environment = environment
-    yield _LOG, environment, login, header
+    request.cls.report = report
+    yield _LOG, environment, login, header, report
     driver.quit()
 
 
@@ -57,14 +74,16 @@ def setup(request, get_param):
     """
     This will execute before executing test case method
     """
-    global driver, _LOG
+    global driver, _LOG, report
     runID = get_param["runid"]
     readProp = ReadConfig()
     # Landing page - Dashboard page
     driver.get("https://www.google.co.in/")
     test_name = request.node.name
+    report.init_extent_test(test_name)
+    report.info_log("####### EXECUTING TEST CASE -- '" + test_name + "'")
     _LOG.info("####### EXECUTING TEST CASE -- '" + test_name + "'")
-    yield
+    yield report
     # This will execute after executing test case method
     _LOG.info("Tear down driver")
     test_name = request.node.name
@@ -77,6 +96,12 @@ def setup(request, get_param):
     if request.node.rep_setup.failed:
         _LOG.error("####### TEST CASE '" + test_name + "' IS FAILED")
         client.updatetestRail(runID,case_ids,5,fail_msg)
+        report.error_log("####### TEST CASE '" + test_name + "' IS FAILED")
+        screenshot_path = CaptureScreenShot.capture_screenshot(driver, test_name)
+        # below statement will add result to Labmda Test tool
+        # driver.execute_script("lambda-status=failed")
+        report.info_log("Screenshot: " + screenshot_path)
+        report.testcase_result("fail", 'FAILED', screenshot_path)
     elif request.node.rep_setup.passed:
         if request.node.rep_call.failed:
             _LOG.error("####### TEST CASE '" + test_name + "' IS FAILED")
@@ -86,11 +111,20 @@ def setup(request, get_param):
             allure.attach.file(screenshot_path, attachment_type=AttachmentType.PNG)
             # below statement will add result to Labmda Test tool
             # driver.execute_script("lambda-status=failed")
+            report.error_log("####### TEST CASE '" + test_name + "' IS FAILED")
+            screenshot_path = CaptureScreenShot.capture_screenshot(driver, test_name)
+            # below statement will add result to Labmda Test tool
+            # driver.execute_script("lambda-status=failed")
+            report.info_log("Screenshot: " + screenshot_path)
+            report.testcase_result("fail", 'FAILED', screenshot_path)
+
         else:
             _LOG.info("####### TEST CASE '" + test_name + "' IS PASSED")
             client.updatetestRail(runID, case_ids, 1, success_msg)
             # below statement will add result to Labmda Test tool
             # driver.execute_script("lambda-status=passed")
+            report.testcase_result("pass", None, None)
+            report.info_log("####### TEST CASE '" + test_name + "' IS PASSED")
 
 
 def pytest_addoption(parser):
@@ -135,9 +169,10 @@ def one_time_setup():
     paths.screenshot_folder_path()
     paths.execution_report_path()
     paths.log_file_path()
-    # yield
+    yield
     # _LOG.info("Generating execution report")
     # report = AreReport()
     # report.call_allure_report_bat()
     # report.close_allure()
+    report.flush_report()
 
