@@ -4,8 +4,7 @@ name: default
 steps:
 - name: mytest
   image: maven:3-jdk-10
-  commands:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 
 
 - name: test
