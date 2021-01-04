@@ -22,21 +22,21 @@ class GetPath:
         """
         try:
 
-            screenshot_path = os.path.join("resources","screenshots")
+            screenshot_path = os.path.join("resources", "screenshots")
             GenericFunctions.isdir_present(screenshot_path)
             return screenshot_path
         except Exception as e:
             print("Error in screenshot_folder_path" + str(e))
 
-    def test_data_path(self, excel_name:str, doc="this returns the path of test_data folder. "
-                                                 "It contains test test_data files"):
+    def test_data_path(self, excel_name: str, doc="this returns the path of test_data folder. "
+                                                  "It contains test test_data files"):
         """
         this returns the path of given data file from test_data folder.
         'test_data' folder contains test multiple test_data files
         """
         try:
 
-            data_file = os.path.join("resources","test_data",excel_name)
+            data_file = os.path.join("resources", "test_data", excel_name)
             return data_file
         except Exception as e:
             print("Error in data file path" + str(e))
@@ -46,7 +46,7 @@ class GetPath:
         this returns the path of config.ini file
         """
         try:
-            conf_path = os.path.join("config","config.ini")
+            conf_path = os.path.join("config", "config.ini")
             return conf_path
         except Exception as e:
             print("Error in config.properties path" + str(e))
@@ -56,7 +56,7 @@ class GetPath:
         This returns the path of execution report
         """
         try:
-            report_path = os.path.join("target","execution_report")
+            report_path = os.path.join("target", "execution_report")
             GenericFunctions.isdir_present(report_path)
             return report_path
         except Exception as e:
@@ -67,7 +67,7 @@ class GetPath:
         This returns the path of path where allure report .bat or .bash file is present
         """
         try:
-            allure_report_path = os.path.join("utilities","generate_allure_report")
+            allure_report_path = os.path.join("utilities", "generate_allure_report")
             return allure_report_path
         except Exception as e:
             print("Error in allure report path" + str(e))
@@ -77,7 +77,7 @@ class GetPath:
         This returns the path of execution report
         """
         try:
-            archive_path = os.path.join("target","archive")
+            archive_path = os.path.join("target", "archive")
             GenericFunctions.isdir_present(archive_path)
             return archive_path
         except Exception as e:
@@ -88,21 +88,31 @@ class GetPath:
         This returns the path of execution report
         """
         try:
-            archive_path = os.path.join("resources","archive")
+            archive_path = os.path.join("resources", "archive")
             GenericFunctions.isdir_present(archive_path)
             return archive_path
         except Exception as e:
             print("Error in execution report path" + str(e))
 
-    def testrail_mapping_path(self, excel_name: str, doc="this returns the path of test_data folder. "
-                                                  "It contains test test_data files"):
+    def testrail_mapping_path(self, excel_name: str, doc="this returns the path of test_data folder."):
+        """
+        This returns the path of test_data excel
+        """
+        try:
+
+            data_file = os.path.join("resources", "test_data", excel_name)
+            return data_file
+        except Exception as e:
+            print("Error in data file path" + str(e))
+
+    def extentreport_jar_path(self, doc="this returns the path of Java Jar "):
         """
         this returns the path of given data file from test_data folder.
         'test_data' folder contains test multiple test_data files
         """
         try:
 
-            data_file = os.path.join("resources", "test_data", excel_name)
-            return data_file
+            jar_path = os.path.join("Reports", "TestProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar")
+            return jar_path
         except Exception as e:
             print("Error in data file path" + str(e))

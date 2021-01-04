@@ -3,6 +3,7 @@ from jpype import JPackage
 
 
 # from selenium_base.path import GetPath
+from selenium_base.path import GetPath
 
 
 class Reports:
@@ -21,7 +22,10 @@ class Reports:
 
 
         #self.classpath = "F:/EclipseWorkSpace/TestProject/target/TestProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
-        self.classpath = "F:/AllPythonProjects/PDS_Framwork/Reports/TestProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
+        #self.classpath = "F:/AllPythonProjects/PDS_Framwork/Reports/TestProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar"
+        getpath = GetPath()
+        self.classpath = getpath.extentreport_jar_path()
+        print("self.classpath  " , self.classpath)
 
         jpype.startJVM(jpype.getDefaultJVMPath(), '-ea', "-Djava.class.path=" + self.classpath)
         print("Step 1 *******")
