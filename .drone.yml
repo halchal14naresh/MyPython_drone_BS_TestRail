@@ -1,13 +1,13 @@
 kind: pipeline
 name: default
 
-steps:
-- name: mytest
-  image: openjdk:8
-  commands:
-    - java -version
-    - echo $JAVA_HOME
-    - whereis java
+#steps:
+#- name: mytest
+#  image: openjdk:8
+#  commands:
+#    - java -version
+#    - echo $JAVA_HOME
+#    - whereis java
 
 
 
