@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-#- name: mytest
+#- name: test
 #  image: openjdk:8
 #  commands:
 #    - java -version
@@ -11,11 +11,10 @@ steps:
 
 
 
-- name: test
-  image: carvk/java_python:openjdk15_python38
+- name: Python&Java
+  image: carvk/java_python:openjdk15_python38 --network=host
 
   commands:
-  network_mode: "host"
     - python --version
     - java -version
     - echo $JAVA_HOME
