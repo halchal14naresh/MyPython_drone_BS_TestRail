@@ -11,22 +11,22 @@ steps:
 
 
 
-#- name: Python&Java
-#  image: carvk/java_python:openjdk15_python38
-#  network_mode: host
-#  commands:
-#    - python --version
-#    - java -version
-#    - echo $JAVA_HOME
-#    - whereis java
-#    - pip install -r requirements.txt
-#    - pytest -v -s --browser=bs --runid=1
-
-
-- commands:
-    - echo hello
-    image: carvk/java_python:openjdk15_python38
-    name: test
-    network_mode: host
+- name: Python&Java
+  image: carvk/java_python:openjdk15_python38
+  network_mode: host
+  commands:
+    - python --version
+    - java -version
+    - echo $JAVA_HOME
+    - whereis java
     - pip install -r requirements.txt
     - pytest -v -s --browser=bs --runid=1
+
+
+#- commands:
+#    - echo hello
+#    image: carvk/java_python:openjdk15_python38
+#    name: test
+#    network_mode: host
+#    - pip install -r requirements.txt
+#    - pytest -v -s --browser=bs --runid=1
