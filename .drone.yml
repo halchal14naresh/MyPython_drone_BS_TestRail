@@ -1,7 +1,7 @@
 kind: pipeline
 name: default
 
-#steps:
+steps:
 #- name: mytest
 #  image: openjdk:8
 #  commands:
