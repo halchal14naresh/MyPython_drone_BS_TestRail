@@ -13,7 +13,8 @@ steps:
 
 - name: Python&Java
   image: carvk/java_python:openjdk15_python38
-
+  networks:
+    - host
   commands:
     - python --version
     - java -version
