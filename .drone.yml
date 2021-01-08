@@ -25,7 +25,7 @@ steps:
 
 
 #- commands:
-#    - echo hello
+#    - echo hello1
 #    image: carvk/java_python:openjdk15_python38
 #    name: test
 #    network_mode: host
